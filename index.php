@@ -15,29 +15,29 @@
             <form action="#">
                 <div class="error-txt">This is an error message!!</div>
                 <div class="name-details">
-                    <div class="field">
+                    <div class="field input">
                         <label for="">First Name</label>
                         <input type="text" placeholder="Sachin">
                     </div>
-                    <div class="field">
+                    <div class="field input">
                         <label for="">Last Name</label>
                         <input type="text" placeholder="Pandey">
                     </div>
-                    <div class="field">
-                        <label for="">Email</label>
-                        <input type="email" placeholder="example@domain.com">
-                    </div>
-                    <div class="field">
-                        <label for="">Password</label>
-                        <input type="password" placeholder="%#xhhs72672guiw$%6">
-                    </div>
-                    <div class="field">
-                        <label for="">Image</label>
-                        <input type="file">
-                    </div>
-                    <div class="field">
-                        <input type="submit" value="Submit">
-                    </div>
+                </div>
+                <div class="field input">
+                    <label for="">Email</label>
+                    <input type="email" placeholder="example@domain.com">
+                </div>
+                <div class="field input">
+                    <label for="">Password</label>
+                    <input type="password" placeholder="%#xhhs72672guiw$%6">
+                </div>
+                <div class="field image">
+                    <label for="">Image</label>
+                    <input type="file">
+                </div>
+                <div class="field button">
+                    <input type="submit" value="Submit">
                 </div>
             </form>
             <div class="link">Already a user? <a href="#">Login</a></div>
