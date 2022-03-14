@@ -31,6 +31,7 @@
                 <div class="field input">
                     <label for="">Password</label>
                     <input type="password" placeholder="%#xhhs72672guiw$%6">
+                    <i class="fas fa-eye"></i>
                 </div>
                 <div class="field image">
                     <label for="">Image</label>
