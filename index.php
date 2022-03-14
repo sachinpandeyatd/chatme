@@ -40,7 +40,7 @@
                     <input type="submit" value="Submit">
                 </div>
             </form>
-            <div class="link">Already a user? <a href="#">Login</a></div>
+            <div class="link">Already a user? <a href="login.php">Login</a></div>
         </section>
     </div>
 </body>
