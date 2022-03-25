@@ -15,7 +15,7 @@
                 <div class="content">
                     <img src="img.jpg" alt="">
                     <div class="details">
-                        <span>Coding Nepal</span>
+                        <span>Sachin</span>
                         <p>Active Now</p>
                     </div>
                 </div>
