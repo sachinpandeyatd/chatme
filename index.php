@@ -44,5 +44,7 @@
             <div class="link">Already a user? <a href="login.php">Login</a></div>
         </section>
     </div>
+
+    <script src="js/pass-show-hide.js"></script>
 </body>
 </html>

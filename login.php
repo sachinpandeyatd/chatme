@@ -30,5 +30,7 @@
             <div class="link">Not a user? <a href="index.php">Signup</a></div>
         </section>
     </div>
+
+    <script src="js/pass-show-hide.js"></script>
 </body>
 </html>
