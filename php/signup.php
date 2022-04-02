@@ -1,0 +1,61 @@
+<?php
+    session_start();
+    include_once 'conf.php';
+
+    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+    if(!empty($fname) && !empty($lname) && !empty($email) && !empty($password)) {
+        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $sql = mysqli_query($conn, "SELECT * FROM users WHERE email='{$email}'");
+
+            if(mysqli_num_rows($sql) > 0){
+                echo "$email - This email is already registered";
+            }else{
+                if(isset($_FILES['image'])){
+
+                include 'error.php';
+                    $img_name = $_FILES['image']['name'];
+                    $tmp_name = $_FILES['image']['tmp_name'];
+                    $img_explode = explode('.', $img_name);
+                    $img_ext = end($img_explode);
+
+                    $extensions = ['jpg', 'jpeg', 'png'];
+
+                    if(in_array($img_ext, $extensions) === true){
+                        $time = time();
+                        $new_img_name = $time.$img_name;
+
+                        if(move_uploaded_file($tmp_name, "/opt/lampp/htdocs/chatme/images/".$new_img_name)){
+                            $status = "Active now";
+                            $random_id = rand(time(), 1000000);
+                            echo "check";
+                            die();
+                            $sql2 = mysqli_query($conn, "INSERT INTO users (`fname`, `lname`, `email`, `password`, `image`, `status`, `unique_id`) VALUES ('{$fname}', '{$lname}', '{$email}', '{$password}', '{$new_img_name}', '{$status}', '{$random_id}')");
+
+                            if($sql2){
+                                $sql3 = mysqli_query($conn, "SELECT * FROM users WHERE email='{$email}'");
+                                if(mysqli_num_rows($sql3) > 0){
+                                    $row = mysqli_fetch_assoc($sql3);
+                                    $_SESSION['unique_id'] = $row['unique_id'];
+                                    echo "success";
+                                }
+                            }else{
+                                echo "Sorry, something went wrong";
+                            }
+                        }
+                    }else{
+                        echo "Please select an image of extension jpg, jpeg or png";
+                    }
+                }
+            }
+        }else{
+            echo "$email - This is not a valid email";
+        }
+    } else {
+        echo "All fields are required!"; 
+    }
+
+?>
