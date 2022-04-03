@@ -1,4 +1,5 @@
 const searchBar = document.querySelector(".users .search input"),
+usersList = document.querySelector(".users .users-list"),
 searchBtn = document.querySelector(".users .search button");
 
 searchBtn.onclick = ()=>{
@@ -6,3 +7,18 @@ searchBtn.onclick = ()=>{
     searchBar.focus();
     searchBtn.classList.toggle("active");
 }
+
+setInterval(()=>{
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'php/users.php', true);
+
+    xhr.onload = ()=>{
+        if(xhr.readyState === XMLHttpRequest.DONE){
+            if(xhr.status === 200){
+                let data = xhr.response;
+                usersList.innerHTML = data;
+            }
+        }
+    }
+    xhr.send();
+}, 500)
