@@ -1,3 +1,12 @@
+<?php
+
+    session_start();
+    if(!isset($_SESSION['unique_id'])){
+        header("Location: login.php");
+    }
+
+?>
+
 <?php require "php/header.php"; ?>
 <body>
     <div class="wrapper">
