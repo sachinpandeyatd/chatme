@@ -5,22 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Me</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 </head>
 <body>
     <div class="wrapper">
-        <section class="form signup">
+        <section class="form login">
             <header>Chat Me</header>
-            <form action="#">
-                <div class="error-txt">This is an error message!!</div>
+            <form action="" method="POST">
+                <div class="error-txt"></div>
                 <div class="field input">
                     <label for="">Email</label>
-                    <input type="email" placeholder="example@domain.com">
+                    <input name="email" type="email" placeholder="example@domain.com">
                 </div>
                 <div class="field input">
                     <label for="">Password</label>
-                    <input type="password" placeholder="%#xhhs72672guiw$%6">
+                    <input name="password" type="password" placeholder="%#xhhs72672guiw$%6">
                     <i class="fas fa-eye"></i>
                 </div>
                 <div class="field button">
@@ -32,5 +32,6 @@
     </div>
 
     <script src="js/pass-show-hide.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
