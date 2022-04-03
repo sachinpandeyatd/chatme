@@ -12,7 +12,7 @@
     <div class="wrapper">
         <section class="form signup">
             <header>Chat Me</header>
-            <form action="#" method="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data">
                 <div class="error-txt"></div>
                 <div class="name-details">
                     <div class="field input">

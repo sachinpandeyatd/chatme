@@ -15,8 +15,6 @@
                 echo "$email - This email is already registered";
             }else{
                 if(isset($_FILES['image'])){
-
-                include 'error.php';
                     $img_name = $_FILES['image']['name'];
                     $tmp_name = $_FILES['image']['tmp_name'];
                     $img_explode = explode('.', $img_name);
@@ -31,10 +29,7 @@
                         if(move_uploaded_file($tmp_name, "/opt/lampp/htdocs/chatme/images/".$new_img_name)){
                             $status = "Active now";
                             $random_id = rand(time(), 1000000);
-                            echo "check";
-                            die();
                             $sql2 = mysqli_query($conn, "INSERT INTO users (`fname`, `lname`, `email`, `password`, `image`, `status`, `unique_id`) VALUES ('{$fname}', '{$lname}', '{$email}', '{$password}', '{$new_img_name}', '{$status}', '{$random_id}')");
-
                             if($sql2){
                                 $sql3 = mysqli_query($conn, "SELECT * FROM users WHERE email='{$email}'");
                                 if(mysqli_num_rows($sql3) > 0){
