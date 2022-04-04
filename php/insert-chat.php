@@ -12,5 +12,4 @@
     }else{
         header("../login.php");
     }
-
 ?>
