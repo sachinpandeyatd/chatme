@@ -2,7 +2,7 @@
 
     session_start();
     include_once "conf.php";
-
+    $outgoing_id = $_SESSION['unique_id'];
     $sql = mysqli_query($conn, "SELECT * FROM users");
     $output = "";
 
