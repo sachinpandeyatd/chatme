@@ -3,7 +3,7 @@ inputField = form.querySelector(".input-field"),
 sendBtn = form.querySelector("button"),
 chatBox = document.querySelector(".chat-box");
 
-form.onsubmit = (e)=>{
+form.onsubmit = (e) =>{
     e.preventDefault();
 }
 
