@@ -11,7 +11,7 @@
             $result = "Start chat";
         }
 
-        (strlen($result) > 28) ? $message = substr($result, 0, 28).'...' : $message = $result;
+        (strlen($result) > 28) ? $message = substr($result, 0, 28).'...' : $message = $result;  
         ($outgoing_id == $row2['outgoing_message_id']) ? $you = "You: " : $you = "";
         ($row['status'] == "Offline now") ? $offline = 'offline' : $offline = "";
         
